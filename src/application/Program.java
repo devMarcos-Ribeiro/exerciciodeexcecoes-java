@@ -12,19 +12,21 @@ public class Program {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner (System.in);
-			System.out.println("Enter account data: ");
-			System.out.print("Number: ");
-			int number = sc.nextInt();
-			System.out.print("Holder: ");
-			String holder = sc.next();
-			System.out.print("Initial balance: $");
-			double balance = sc.nextDouble();
-			System.out.print("Withdraw limit: $");
-			double withDrawLimit = sc.nextDouble();
-			
-			Account account = new Account(number, holder, balance, withDrawLimit);
-			System.out.print("Enter ammount for withdraw: ");
-			double amount = sc.nextDouble();
+		
+		System.out.println("Enter account data: ");
+		System.out.print("Number: ");
+		int number = sc.nextInt();
+		System.out.print("Holder: ");
+		String holder = sc.next();
+		System.out.print("Initial balance: $");
+		double balance = sc.nextDouble();
+		System.out.print("Withdraw limit: $");
+		double withDrawLimit = sc.nextDouble();
+		
+		Account account = new Account(number, holder, balance, withDrawLimit);
+		System.out.print("Enter ammount for withdraw: ");
+		double amount = sc.nextDouble();
+		
 		try {
 			account.withDraw(amount);
 			System.out.println("New balance: "+String.format("%.2f", account.getBalance()));
@@ -37,6 +39,7 @@ public class Program {
 		} 
 		
 		sc.close();
+		
 	}
 
 }
